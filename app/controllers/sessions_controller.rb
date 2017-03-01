@@ -4,13 +4,15 @@ class SessionsController < ApplicationController
   
   def create
     user = User.find_by_email(params[:email])
+    puts user
+    puts '/'*70
     
     if user && user.authenticate(params[:password])
       session[user_id] = user.id
-      redirect_to {}
+      redirect_to event
     else 
-      flash[:message] = user.errors.full_messages
-      redirect to new_session
+      flash[:error] = 'Invalid'
+      redirect_to new_session_url
       
     end
   end 
