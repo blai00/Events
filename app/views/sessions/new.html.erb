@@ -1,0 +1,18 @@
+<h1>Welcome</h1>
+
+<h2>Register</h2>
+<% if flash[:message] %> 
+    <p><%= flash[:message]</p> %>
+<% end %>
+<form action ='/users' method= 'post'>
+    First Name: <%= text_field(:user, :first_name) %>
+    Last Name: <%= text_field(:user, :first_name) %>
+    Email: <%= email_field(:user, :email) %>
+    Location:<%= text_field(:user, :location) %>
+    State: <%= select(us_states) %>
+    Password <%= password_field(:user, :password) %>
+    Password Confirmation <%= password_field(:user, :password_confirmation) %>
+</form
+
+    
+    
