@@ -8,12 +8,18 @@ class SessionsController < ApplicationController
     puts '/'*70
     
     if user && user.authenticate(params[:password])
-      session[user_id] = user.id
-      redirect_to event
+      session[:user_id] = user.id
+      redirect_to events_url
     else 
       flash[:error] = 'Invalid'
       redirect_to new_session_url
       
     end
-  end 
+    
+  end
+  
+  def destroy
+    reset_session
+    redirect_to new_session_url
+  end
 end

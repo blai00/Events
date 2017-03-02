@@ -1,0 +1,11 @@
+<h2>Edit Event</h2>
+<form action= "/events/<%= @event.id %>" method= 'post'>
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <input type ='hidden' name="_method" value='patch'>
+    Name<%= text_field(:event, :name) %>
+    Date: <%= date_field(:event, :date) %>
+    Location: <%= text_field(:event, :location) %>
+    State: <%= select(:event, :state, us_states) %>
+   <input type ='submit' value ='Update Event'>
+</form>
+    

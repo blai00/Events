@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
+  root 'sessions#new'
+  
+  post 'attends' => 'attends#create'
+  
+  delete 'attends/:id' => 'attends#destroy'
+  
+  post 'comments' => 'comments#create'
+  
   resources :sessions
   resources :users
   resources :events
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -19,14 +19,14 @@
     
     
 <h2>Login</h2>
-    <% if flash[:error] %> 
+<% if flash[:error] %> 
     <p><%= flash[:error] %> </p>
 <% end %>
 
 <form action = '/sessions' method = 'post'>
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-    Email: <%= email_field(:user, :email) %>
-    Password: <%= password_field(:user, :password) %>
+    Email<input type='email' name='email'>
+    Password<input type='password' name ='password'>
     <button type = 'submit'>Login</button>
     
 </form>
