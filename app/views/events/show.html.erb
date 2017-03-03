@@ -12,9 +12,11 @@
     </tr>
 
 <% @event.attends.each do |attend| %>
-    <td><%= attend.user.first_name %></td>
-    <td><%= attend.user.location %></td>
-    <td><%= attend.user.state %></td>
+    <tr>
+        <td><%= attend.user.first_name %></td>
+        <td><%= attend.user.location %></td>
+        <td><%= attend.user.state %></td>
+    </tr>
 <% end %>
 </table>
 

@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   
   def index
-    @events = Event.all
+    @events = Event.filtered_events_by_state(current_user.state)
   end
   
   def create

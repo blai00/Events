@@ -10,11 +10,10 @@
             <th>Host</th>
             <th>Action/Status</th>
         </tr>
-<% @events.each do |event| %>
-    <% if event.state == current_user.state %>
+<% @events[:instate].each do |event| %>
         <tr>
             <td><%= link_to event.name, event_url(event.id) %></td>
-            <td><%= event.date %></td>
+            <td><%= event.date.to_s(:btf) %></td>
             <td><%= event.location %></td>
             <td><%=event.user.first_name %> </td>
         <% if event.user_id == current_user.id %>
@@ -36,7 +35,6 @@
             <% end %>
             </td>
         <% end %>
-    <% end %>
 <% end %>
 </table>
 
@@ -50,10 +48,10 @@
         <th>Host</th>
         <th>Action/Status</th>
     </tr>
-<% @events.each do |event| %>    
+<% @events[:outstate].each do |event| %>
     <tr>
         <td><%= link_to event.name, event_url(event.id) %></td>
-        <td><%= event.date %></td>
+        <td><%= event.date.to_s(:btf) %></td>
         <td><%= event.location %></td>
         <td><%= event.state %></td>
         <td><%= event.user.first_name %> </td>
