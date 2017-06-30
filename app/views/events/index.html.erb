@@ -1,8 +1,8 @@
 <h2>Welcome <%= current_user.first_name %></h2>
 <p><%= link_to "Edit User", edit_user_url(current_user.id) %></p>
 
-<p>Here are some of the events at your state</p>
-<table>
+<h4>Here are some of the events at your state:</h4>
+<table class= "table table-striped">
         <tr>
             <th>Name</th>
             <th>Date</th>
@@ -38,8 +38,8 @@
 <% end %>
 </table>
 
-<p>Here are some events in other states</p>  
-<table>
+<h4>Here are some events in other states:</h4>  
+<table class =" table table-striped">
     <tr>
         <th>Name</th>
         <th>Date</th>
@@ -76,6 +76,8 @@
         <% end %>
 <% end %>
 </table>
+
+<h3>Add an Event?</h3>
 
 <form action= '/events' method = 'post'>
     <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>

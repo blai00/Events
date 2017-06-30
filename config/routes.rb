@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   
   post 'comments' => 'comments#create'
   
+  get 'comments/:id' => 'comments#edit'
+  
+  
+  delete 'comments/:id' => 'comments#destroy'
+  
   resources :sessions
   resources :users
   resources :events

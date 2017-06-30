@@ -1,10 +1,10 @@
 <h1><%= @event.name %></h1>
 <h3>Host: <%= @event.user.first_name %> <%= @event.user.last_name %></h3>
-<h3>Date: <%= @event.date %></h3>
+<h3>Date: <%= @event.date.to_time.strftime('%B %e %Y') %></h3>
 <h3>Location: <%= @event.location %>, <%= @event.state %> </h3>
 <h3>People Attending: <%= @event.attends.count %></h3>
 
-<table>
+<table class="table table-striped">
     <tr>
         <th>Name</th>
         <th>Location</th>
